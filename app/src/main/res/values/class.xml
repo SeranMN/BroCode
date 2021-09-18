@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="Classes">
+        <item>Pure Maths</item>
+        <item>Applied Maths</item>
+        <item>Biology</item>
+        <item>Physics</item>
+        <item>Chemistry</item>
+        <item>ICT</item>
+    </array>
+</resources>
