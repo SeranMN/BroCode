@@ -2,20 +2,24 @@ package com.example.chapter7app;
 
 import androidx.annotation.NonNull;
 
-public class NotificationHelper {
+public class Notification {
 
     String Topic;
     String Message;
     String Date;
     String Time;
-    String AnncClass;
+    String ALYear;
 
-    public NotificationHelper(String topic, String message, String date, String time, String aClass) {
-        Topic = topic;
-        Message = message;
-        Date = date;
-        Time = time;
-        AnncClass = aClass;
+    public  Notification(){
+
+    }
+
+    public Notification(String topic, String message, String date, String time, String alYear) {
+        this.Topic = topic;
+        this.Message = message;
+        this.Date = date;
+        this.Time = time;
+        this.ALYear = alYear;
     }
 
     public String getTopic() {
@@ -50,11 +54,11 @@ public class NotificationHelper {
         Time = time;
     }
 
-    public String getAnncClass() {
-        return AnncClass;
+    public String getALYear() {
+        return ALYear;
     }
 
-    public void setAnncClass(String anncClass) {
-        AnncClass = anncClass;
+    public void setALYear(String ALYear) {
+        this.ALYear = ALYear;
     }
 }
