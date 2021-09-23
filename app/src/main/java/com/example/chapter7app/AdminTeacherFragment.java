@@ -3,12 +3,28 @@ package com.example.chapter7app;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,6 +46,10 @@ public class AdminTeacherFragment extends Fragment {
         // Required empty public constructor
     }
 
+    public AdminTeacherFragment(teacherListAdapter adapter) {
+        this.adapter = adapter;
+    }
+
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -48,6 +68,8 @@ public class AdminTeacherFragment extends Fragment {
         return fragment;
     }
 
+    TeacherDAO teacherDAO;
+    ArrayList<Teacher> teachers = new ArrayList( );
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,24 +79,81 @@ public class AdminTeacherFragment extends Fragment {
         }
     }
 
+    teacherListAdapter adapter = new teacherListAdapter();
+    TextView tv;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_admin_teacher, container, false);
         Button button = (Button) view.findViewById(R.id.btn_add);
+
+        System.out.print("teachers");
+        teacherDAO = new TeacherDAO();
+
+        loadData();
+
+
         button.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
             public void onClick(View v) {
-                Intent intent ;
-                intent = new Intent(getActivity(),addTeacher.class);
+//                FragmentTransaction fr = getFragmentManager().beginTransaction();
+//                fr.replace(R.id.frameLayout2,new AddTeacherFragment());
+//                fr.commit();
+                Intent intent;
+                intent = new Intent(getActivity(), addTeacher.class);
                 startActivity(intent);
+                 tv = (TextView) view.findViewById(R.id.tv);
 
             }
         });
 
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.teacherListAdmin);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager manager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(manager);
+
+
+        recyclerView.setAdapter(adapter);
+
+
         return view;
+    }
+View view;
+    public void loadData() {
+        teacherDAO.get().addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Teacher teacher = new Teacher();
+
+
+
+                ArrayList<Teacher> t =  teachers;
+                if (snapshot.hasChildren()) {
+                    for (DataSnapshot data : snapshot.getChildren()) {
+                         teacher = data.getValue(Teacher.class);
+
+
+                        teachers.add(teacher);
+
+
+                    }
+
+                    adapter.setTeachers(teachers);
+
+                    adapter.notifyDataSetChanged();
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 }

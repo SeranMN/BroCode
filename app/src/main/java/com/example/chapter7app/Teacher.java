@@ -1,13 +1,19 @@
 package com.example.chapter7app;
 
-public class addTeacherHelper {
+public class Teacher {
     String name;
     String address;
     String mob;
     String email;
     String nic;
+    String degree;
+
     String subject;
-    public addTeacherHelper(String name, String address, String mob, String email, String degree, String tnic, String spin) {
+
+    public Teacher(){
+
+    }
+    public Teacher(String address, String degree, String email, String mob, String name, String tnic, String spin) {
         this.name = name;
         this.address = address;
         this.mob = mob;
@@ -17,6 +23,7 @@ public class addTeacherHelper {
         this.subject = spin;
 
     }
+
 
 
     public String getName() {
@@ -47,7 +54,35 @@ public class addTeacherHelper {
         return degree;
     }
 
-    String degree;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setMob(String mob) {
+        this.mob = mob;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setNic(String nic) {
+        this.nic = nic;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public void setDegree(String degree) {
+        this.degree = degree;
+    }
+
 
 
 

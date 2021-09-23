@@ -87,6 +87,7 @@
         android:minHeight="48dp"
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView7" />
 
     <EditText
@@ -144,7 +145,7 @@
     <Spinner
         android:id="@+id/spinner_subject"
         android:layout_width="188dp"
-        android:layout_height="42dp"
+        android:layout_height="48dp"
         android:backgroundTint="@color/purple_700"
         android:entries="@array/Classes"
         android:minHeight="48dp"
@@ -155,12 +156,12 @@
         android:id="@+id/btn_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="252dp"
+        android:layout_marginTop="76dp"
         android:text="@string/submit"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_subject" />
 
     <TextView
         android:id="@+id/textView4"
@@ -184,5 +185,6 @@
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="@+id/et_name" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

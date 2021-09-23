@@ -1,5 +1,6 @@
 package com.example.chapter7app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -8,9 +9,17 @@ import android.view.Menu;
 import android.view.MenuInflater;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class Home extends AppCompatActivity {
-
+DatabaseReference ref;
+teacherListAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Bundle bundle = getIntent().getExtras();
@@ -25,7 +34,7 @@ public class Home extends AppCompatActivity {
         bottomNavigation.add(new MeowBottomNavigation.Model(4,R.drawable.ic_baseline_notifications_24));
         bottomNavigation.add(new MeowBottomNavigation.Model(5,R.drawable.ic_baseline_account_circle_24));
 
-        String user = bundle.getString("user");
+        String user = "admin"; //bundle.getString("user");
 
         bottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
             @Override
@@ -99,7 +108,7 @@ public class Home extends AppCompatActivity {
 
     }
     private void loadFragment(Fragment fragment){
-        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,fragment)
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout2,fragment)
                 .commit();
     }
 

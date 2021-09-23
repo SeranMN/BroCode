@@ -1,5 +1,6 @@
 package com.example.chapter7app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -8,7 +9,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -40,25 +44,41 @@ Button btn;
         ArrayAdapter adapter = new ArrayAdapter (getApplicationContext(), android.R.layout.simple_spinner_item, subjects);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         subject.setAdapter(adapter);
+        TeacherDAO teacherDAO = new TeacherDAO();
 
     btn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            firebaseDatabase = FirebaseDatabase.getInstance();
-            reference = firebaseDatabase.getReference("Teacher");
+
             String tName =  name.getText().toString();
             String tAddress = address.getText().toString();
-            String tmob =  mobileNo.getText().toString();
+            String tmob = mobileNo.getText().toString();
             String tEmail =email.getText().toString();
             String tdegree =   degree.getText().toString();
 
             String tnic = nic.getText().toString();
             String spin = subject.getSelectedItem().toString();
-            addTeacherHelper addTeacherHelper = new addTeacherHelper( tName,tAddress,tmob,tEmail,tdegree ,tnic,spin);
 
 
-            reference.child(tnic).setValue(addTeacherHelper);
-            finish();
+            Teacher teacher = new Teacher( tAddress,  tdegree,tEmail, tmob,  tName,  tnic,  spin);
+
+
+            teacherDAO.add(teacher).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void unused) {
+                    Toast.makeText(getApplicationContext(), "Teacher Added", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            ).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(getApplicationContext(), "Failed", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+
+
         }
     });
 
