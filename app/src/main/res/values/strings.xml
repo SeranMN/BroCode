@@ -17,4 +17,12 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="txtTopic">Topic</string>
+    <string name="txtMessage">Message</string>
+    <string name="et_Message">Message</string>
+    <string name="txtDate">Date</string>
+    <string name="txtTime">Time</string>
+    <string name="txtClass">Class</string>
+    <string name="btn_Add_Announcement">Add</string>
+    <string name="btn_Add">Add New</string>
 </resources>

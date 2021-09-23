@@ -60,8 +60,10 @@ public class Home extends AppCompatActivity {
                     case 4:
                         if(user.equals("admin")){
                             fragment = new AdminNotificationFragment();
+                        }else{
+                            fragment = new NotificationFragment();
                         }
-                        fragment = new NotificationFragment();
+
                         getSupportActionBar().setTitle("Notifications");
                         break;
                     case 5:
