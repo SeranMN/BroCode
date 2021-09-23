@@ -3,17 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Brocode/app/src/main/res/layout/activity_admin_view.xml" value="0.25052083333333336" />
-        <entry key="..\:/Brocode/app/src/main/res/layout/activity_home.xml" value="0.25052083333333336" />
-        <entry key="..\:/Brocode/app/src/main/res/layout/activity_login.xml" value="0.25052083333333336" />
-        <entry key="..\:/Brocode/app/src/main/res/layout/activity_login2.xml" value="0.25052083333333336" />
-        <entry key="..\:/Brocode/app/src/main/res/layout/activity_main.xml" value="0.25052083333333336" />
-        <entry key="..\:/Brocode/app/src/main/res/layout/content_login.xml" value="0.25052083333333336" />
-        <entry key="..\:/Brocode/app/src/main/res/layout/fragment_account.xml" value="0.25052083333333336" />
-        <entry key="..\:/Brocode/app/src/main/res/layout/fragment_admin_class.xml" value="0.25052083333333336" />
-        <entry key="..\:/Brocode/app/src/main/res/layout/fragment_admin_home.xml" value="0.25052083333333336" />
-        <entry key="..\:/Brocode/app/src/main/res/layout/fragment_admin_teacher.xml" value="0.25052083333333336" />
-        <entry key="..\:/Brocode/app/src/main/res/layout/fragment_first.xml" value="0.25052083333333336" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/activity_add_marks.xml" value="0.264" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/activity_admin_view.xml" value="0.19010416666666666" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/activity_select_class.xml" value="0.19010416666666666" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/fragment_admin_add_marks.xml" value="0.24010416666666667" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/fragment_admin_class.xml" value="0.17255434782608695" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/fragment_admin_home.xml" value="0.17255434782608695" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/fragment_admin_notification.xml" value="0.17255434782608695" />
         <entry key="..\:/MAD project final/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.14635416666666667" />
         <entry key="..\:/MAD project final/app/src/main/res/drawable/ic_baseline_class_24.xml" value="0.14635416666666667" />
         <entry key="..\:/MAD project final/app/src/main/res/layout/activity_admin_view.xml" value="0.13020833333333334" />

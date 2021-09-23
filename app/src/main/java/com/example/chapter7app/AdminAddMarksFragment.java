@@ -1,17 +1,17 @@
 package com.example.chapter7app;
 
+import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
-public class AdminHomeFragment extends Fragment {
+public class AdminAddMarksFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,14 +22,14 @@ public class AdminHomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public AdminHomeFragment() {
+    public AdminAddMarksFragment() {
         // Required empty public constructor
     }
 
 
     // TODO: Rename and change types and number of parameters
-    public static AdminHomeFragment newInstance(String param1, String param2) {
-        AdminHomeFragment fragment = new AdminHomeFragment();
+    public static AdminAddMarksFragment newInstance(String param1, String param2) {
+        AdminAddMarksFragment fragment = new AdminAddMarksFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -50,18 +50,16 @@ public class AdminHomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_admin_home, container, false);
-        CardView cardview=(CardView) v.findViewById(R.id.cardaddmark);
-
-        cardview.setOnClickListener(new View.OnClickListener() {
+       View v= inflater.inflate(R.layout.fragment_admin_add_marks, container, false);
+        Button btn=(Button) v.findViewById(R.id.btnaddmarks);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction fr =getFragmentManager().beginTransaction();
-                fr.replace(R.id.frameLayout,new AdminAddMarksFragment());
-                fr.commit();
+                Intent intent= new Intent(getActivity(),SelectClass.class);
+                startActivity(intent);
             }
         });
-
         return v;
     }
+
 }
