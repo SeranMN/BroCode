@@ -2,37 +2,42 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
-<LinearLayout
+    android:id="@+id/teacherCard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:layout_marginTop="12dp"
+    android:backgroundTint="#FFFFFF"
+    android:paddingBottom="16dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="16dp">
+        android:layout_height="93dp">
+
 
         <TextView
             android:id="@+id/teacherName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="1"
-            android:paddingRight="16dp"
+            android:layout_marginTop="4dp"
+            android:paddingRight="32dp"
+            android:textAlignment="center"
             android:textColor="@color/backgrondColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/subject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="1"
-            android:textSize="14sp" />
-    </LinearLayout>
-</LinearLayout>
+            android:layout_marginTop="5dp"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/teacherName"
+            app:layout_constraintStart_toStartOf="@+id/teacherName"
+            app:layout_constraintTop_toBottomOf="@+id/teacherName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
 

@@ -31,7 +31,7 @@ import java.util.ArrayList;
  * Use the {@link AdminTeacherFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AdminTeacherFragment extends Fragment {
+public class AdminTeacherFragment extends Fragment implements teacherListAdapter.teachrOnClickLisner{
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -69,7 +69,7 @@ public class AdminTeacherFragment extends Fragment {
     }
 
     TeacherDAO teacherDAO;
-    ArrayList<Teacher> teachers = new ArrayList( );
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +79,7 @@ public class AdminTeacherFragment extends Fragment {
         }
     }
 
-    teacherListAdapter adapter = new teacherListAdapter();
+    teacherListAdapter adapter = new teacherListAdapter(this);
     TextView tv;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -106,6 +106,7 @@ public class AdminTeacherFragment extends Fragment {
                 Intent intent;
                 intent = new Intent(getActivity(), addTeacher.class);
                 startActivity(intent);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                  tv = (TextView) view.findViewById(R.id.tv);
 
             }
@@ -127,6 +128,7 @@ View view;
         teacherDAO.get().addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ArrayList<Teacher> teachers = new ArrayList( );
                 Teacher teacher = new Teacher();
 
 
@@ -136,7 +138,7 @@ View view;
                     for (DataSnapshot data : snapshot.getChildren()) {
                          teacher = data.getValue(Teacher.class);
 
-
+                         teacher.setKey(data.getKey());
                         teachers.add(teacher);
 
 
@@ -155,5 +157,15 @@ View view;
             }
         });
 
+    }
+
+    @Override
+    public void onClick(Teacher teacher) {
+        Fragment fragment = teacherDetails.newInstance(teacher);
+
+        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frameLayout2,fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }

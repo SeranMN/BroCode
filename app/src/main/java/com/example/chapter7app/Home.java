@@ -69,7 +69,7 @@ teacherListAdapter adapter;
                     case 4:
                         if(user.equals("admin")){
                             fragment = new AdminNotificationFragment();
-                        }
+                        }else
                         fragment = new NotificationFragment();
                         getSupportActionBar().setTitle("Notifications");
                         break;

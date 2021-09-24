@@ -1,6 +1,13 @@
 package com.example.chapter7app;
 
-public class Teacher {
+import com.google.firebase.database.Exclude;
+
+import java.io.Serializable;
+
+public class Teacher implements Serializable {
+
+    @Exclude
+    String key;
     String name;
     String address;
     String mob;
@@ -82,6 +89,14 @@ public class Teacher {
     public void setDegree(String degree) {
         this.degree = degree;
     }
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
 
 
 
