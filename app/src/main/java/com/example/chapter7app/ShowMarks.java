@@ -50,8 +50,11 @@ public class ShowMarks extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot:snapshot.getChildren()){
                     Marks marks3=dataSnapshot.getValue(Marks.class);
                     if(marks3.getClsID().equals(classid)) {
-                        list.add(marks3);
+
                         System.out.println(list);
+                        marks3.setKey(dataSnapshot.getKey());
+                        list.add(marks3);
+                        System.out.println(marks3.getKey());
                     }
 
                 }
