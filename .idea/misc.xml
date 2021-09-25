@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Brocode/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1734375" />
         <entry key="..\:/Brocode/app/src/main/res/layout/activity_add_marks.xml" value="0.264" />
         <entry key="..\:/Brocode/app/src/main/res/layout/activity_admin_view.xml" value="0.19010416666666666" />
         <entry key="..\:/Brocode/app/src/main/res/layout/activity_display_classes_marks.xml" value="0.24010416666666667" />
@@ -12,7 +13,7 @@
         <entry key="..\:/Brocode/app/src/main/res/layout/activity_testno.xml" value="0.25416666666666665" />
         <entry key="..\:/Brocode/app/src/main/res/layout/fragment_admin_add_marks.xml" value="0.24010416666666667" />
         <entry key="..\:/Brocode/app/src/main/res/layout/fragment_admin_class.xml" value="0.17255434782608695" />
-        <entry key="..\:/Brocode/app/src/main/res/layout/fragment_admin_home.xml" value="0.17255434782608695" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/fragment_admin_home.xml" value="0.264" />
         <entry key="..\:/Brocode/app/src/main/res/layout/fragment_admin_notification.xml" value="0.17255434782608695" />
         <entry key="..\:/Brocode/app/src/main/res/layout/fragment_display_marks.xml" value="0.24010416666666667" />
         <entry key="..\:/Brocode/app/src/main/res/layout/fragment_display_marks2.xml" value="0.20923913043478262" />

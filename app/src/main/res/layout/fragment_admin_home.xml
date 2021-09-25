@@ -20,7 +20,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="30dp">
 
 
             <TextView
@@ -42,7 +43,7 @@
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:rowCount="3"
+            android:rowCount="2"
             android:columnCount="2"
             android:columnOrderPreserved="false"
             android:alignmentMode="alignMargins">
@@ -54,7 +55,8 @@
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
                 app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                android:layout_margin="12dp"
+                android:layout_marginBottom="50dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -66,7 +68,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/admin"
+                        android:src="@drawable/adminteacher"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -88,7 +90,8 @@
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
                 app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                android:layout_margin="12dp"
+                android:layout_marginBottom="50dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -100,78 +103,13 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/admin"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:textColor="#000"
-                        android:text="View Teachers"/>
-
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:layout_gravity="center">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/admin"/>
+                        android:src="@drawable/adminclass"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:textColor="#000"
                         android:text="Add Classes"/>
-
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:layout_gravity="center">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/admin"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:textColor="#000"
-                        android:text="View Classes"/>
 
 
                 </LinearLayout>
@@ -187,10 +125,10 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                app:cardElevation="6dp"
+                >
 
                 <LinearLayout
-                    android:id="@+id/cardmark"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -200,7 +138,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/admin" />
+                        android:src="@drawable/adminmarks" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -223,6 +161,7 @@
                 app:cardCornerRadius="12dp"
                 android:layout_margin="12dp">
 
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -233,7 +172,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/admin"/>
+                        android:src="@drawable/notification"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -246,6 +185,8 @@
 
 
             </androidx.cardview.widget.CardView>
+
+
         </GridLayout>
 
     </LinearLayout>
