@@ -2,8 +2,14 @@ package com.example.chapter7app;
 
 import androidx.annotation.NonNull;
 
-public class Notification {
+import com.google.firebase.database.Exclude;
 
+import java.io.Serializable;
+
+public class Notification implements Serializable {
+
+    @Exclude
+    String Key;
     String Topic;
     String Message;
     String Date;
@@ -54,11 +60,17 @@ public class Notification {
         Time = time;
     }
 
-    public String getALYear() {
-        return ALYear;
-    }
+    public String getALYear() { return ALYear; }
 
     public void setALYear(String ALYear) {
         this.ALYear = ALYear;
+    }
+
+    public String getKey() {
+        return Key;
+    }
+
+    public void setKey(String key) {
+        Key = key;
     }
 }

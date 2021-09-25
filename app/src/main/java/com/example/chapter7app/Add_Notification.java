@@ -25,6 +25,7 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 public class Add_Notification extends AppCompatActivity {
@@ -106,6 +107,19 @@ public class Add_Notification extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         Class.setAdapter(adapter);
         NotificationDAO notificationDAO = new NotificationDAO();
+        Notification notificationEdit = (Notification) getIntent().getSerializableExtra("notification");
+        if(notificationEdit == null){
+            btnAdd.setText("Add");
+            btnAdd.setVisibility(View.VISIBLE);
+        }
+        else{
+            Topic.setText(notificationEdit.getTopic());
+            Message.setText(notificationEdit.getMessage());
+            Date.setText(notificationEdit.getDate());
+            Time.setText(notificationEdit.getTime());
+
+            btnAdd.setText("Save Changes");
+        }
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,18 +133,43 @@ public class Add_Notification extends AppCompatActivity {
 
                Notification notification = new Notification(tTopic,tMessage,tDate,tTime,tClass);
 
-               notificationDAO.add(notification).addOnSuccessListener(new OnSuccessListener<Void>() {
-                   @Override
-                   public void onSuccess(Void unused) {
-                       Toast.makeText(getApplicationContext(), "Notification Saved", Toast.LENGTH_SHORT).show();
+               if(notificationEdit == null) {
+                   notificationDAO.add(notification).addOnSuccessListener(new OnSuccessListener<Void>() {
+                       @Override
+                       public void onSuccess(Void unused) {
+                           Toast.makeText(getApplicationContext(), "Notification Saved", Toast.LENGTH_SHORT).show();
+                       }
                    }
+                   ).addOnFailureListener(new OnFailureListener() {
+                       @Override
+                       public void onFailure(@NonNull Exception e) {
+                           Toast.makeText(getApplicationContext(), "Failed", Toast.LENGTH_SHORT).show();
+                       }
+                   });
                }
-               ).addOnFailureListener(new OnFailureListener() {
-                   @Override
-                   public void onFailure(@NonNull Exception e) {
-                       Toast.makeText(getApplicationContext(), "Failed", Toast.LENGTH_SHORT).show();
+               else{
+                   HashMap<String,Object> hashMap = new HashMap<>();
+
+                   hashMap.put("topic",tTopic);
+                   hashMap.put("message",tMessage);
+                   hashMap.put("date",tDate);
+                   hashMap.put("time",tTime);
+                   hashMap.put("alyear",tClass);
+
+                   notificationDAO.update(notificationEdit.getKey(),hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                       @Override
+                       public void onSuccess(Void unused) {
+                           Toast.makeText(getApplicationContext(), "Notification Updated", Toast.LENGTH_SHORT).show();
+                       }
                    }
-               });
+                   ).addOnFailureListener(new OnFailureListener() {
+                       @Override
+                       public void onFailure(@NonNull Exception e) {
+                           Toast.makeText(getApplicationContext(), "Failed", Toast.LENGTH_SHORT).show();
+                       }
+                   });
+               }
+               finish();
             }
         });
     }
