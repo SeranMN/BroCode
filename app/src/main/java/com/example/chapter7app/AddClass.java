@@ -17,12 +17,12 @@ public class AddClass extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_class);
-         EditText edit_TutorName = findViewById(R.id.edtxt01);
-         EditText edit_Degree = findViewById(R.id.edtxt04);
-         EditText edit_ALYear = findViewById(R.id.edtxtn01);
-         EditText edit_Subject = findViewById(R.id.edtxt03);
-         EditText edit_Date = findViewById(R.id.edtxtd01);
-         EditText edit_Time = findViewById(R.id.edtxtt01);
+        EditText edit_TutorName = findViewById(R.id.edtxt01);
+        EditText edit_Degree = findViewById(R.id.edtxt04);
+        EditText edit_ALYear = findViewById(R.id.edtxtn01);
+        EditText edit_Subject = findViewById(R.id.edtxt03);
+        EditText edit_Date = findViewById(R.id.edtxtd01);
+        EditText edit_Time = findViewById(R.id.edtxtt01);
         Button btn = findViewById(R.id.btn04);
         DAOClassTutor dao = new DAOClassTutor();
         btn.setOnClickListener(new View.OnClickListener() {
@@ -52,8 +52,7 @@ public class AddClass extends AppCompatActivity {
 
             };
 
-    });
+        });
 
     }
 }
-

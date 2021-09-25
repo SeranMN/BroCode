@@ -1,15 +1,17 @@
 package com.example.chapter7app;
 
+import java.io.Serializable;
 import java.sql.Time;
 
-public class ClassTutor {
+public class ClassTutor implements Serializable {
 
-    private String tutor;
-    private String degree;
-    private String alYear;
-    private String subject;
-    private String date;
-    private String time;
+     String tutor;
+     String degree;
+     String alYear;
+     String subject;
+     String date;
+     String time;
+     String key;
 
     public ClassTutor(){}
     public ClassTutor(String tutor, String degree, String alYear, String subject, String date, String time) {
@@ -70,5 +72,12 @@ public class ClassTutor {
         this.time = time;
     }
 
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
 }
