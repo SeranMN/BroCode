@@ -16,7 +16,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
-public class AdminClassFragment extends Fragment {
+public class AdminClassFragment extends Fragment implements ClassAdapter.classOnClickListener{
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -105,6 +105,11 @@ public class AdminClassFragment extends Fragment {
 
             }
         });
+    }
+
+    @Override
+    public void onClick(ClassTutor classTutor) {
+
     }
 
 

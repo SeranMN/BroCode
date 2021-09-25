@@ -1,10 +1,13 @@
 package com.example.chapter7app;
 
+import com.google.firebase.database.Exclude;
+
 import java.io.Serializable;
 import java.sql.Time;
 
 public class ClassTutor implements Serializable {
 
+    @Exclude
      String tutor;
      String degree;
      String alYear;

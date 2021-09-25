@@ -51,14 +51,7 @@ public class AdminHomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_admin_home, container, false);
-        Button btn=(Button) view.findViewById(R.id.btn02);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), AddClass.class);
-                startActivity(intent);
-            }
-        });
+
         return view;
     }
 }

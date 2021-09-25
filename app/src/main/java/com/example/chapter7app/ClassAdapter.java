@@ -1,17 +1,23 @@
 package com.example.chapter7app;
 import static android.content.ContentValues.TAG;
+
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassTutorVH> {
 
-    private Home context;
+    private Context context;
     ArrayList <ClassTutor> list = new ArrayList<>();
     private classOnClickListener listener;
     public ClassAdapter(classOnClickListener listener){
@@ -36,7 +42,7 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassTutorVH
     @Override
     public void onBindViewHolder(@NonNull ClassTutorVH holder, int position) {
         ClassTutor classTutor = list.get(position);
-        Log.d(TAG,"OnBindViewHolder");
+        Log.d(TAG, "OnBindViewHolder");
         holder.tutorName.setText(classTutor.getTutor().toString());
         holder.degree.setText(classTutor.getDegree().toString());
         holder.alYear.setText(classTutor.getAlYear().toString());
@@ -44,13 +50,46 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassTutorVH
         holder.date.setText(classTutor.getDate().toString());
         holder.time.setText(classTutor.getTime().toString());
 
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
+        holder.txt_option.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.onClick(classTutor);
+
+
+                PopupMenu popupMenu = new PopupMenu(v.getContext(), holder.txt_option);
+                popupMenu.inflate(R.menu.option_class_menu);
+                popupMenu.setOnMenuItemClickListener (item ->
+                {
+                    switch (item.getItemId()) {
+                        case R.id.menu_edit:
+                            Intent intent = new Intent(v.getContext(), AddClass.class);
+                            intent.putExtra("Edit", classTutor);
+                            v.getContext().startActivity(intent);
+                            break;
+                        case R.id.menu_remove:
+                            DAOClassTutor dao = new DAOClassTutor();
+                            dao.remove(classTutor.getKey()).addOnSuccessListener(suc ->
+                            {
+                                Toast.makeText(v.getContext(), "Record is removed", Toast.LENGTH_SHORT).show();
+                                notifyItemRemoved(position);
+                                list.remove(classTutor);
+                            }).addOnFailureListener(er ->
+                            {
+                                Toast.makeText(v.getContext(), "" + er.getMessage(), Toast.LENGTH_SHORT).show();
+                            });
+
+                            break;
+                    }
+                    return false;
+
+
+                });
+                popupMenu.show();
             }
+
+
         });
     }
+
 
     @Override
     public int getItemCount() {
@@ -58,7 +97,7 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassTutorVH
     }
 
     public class ClassTutorVH extends RecyclerView.ViewHolder{
-        public TextView tutorName, degree, alYear, subject, date, time;
+        public TextView tutorName, degree, alYear, subject, date, time, txt_option;
         public CardView cardView;
         public ClassTutorVH(@NonNull View itemView){
             super(itemView);
@@ -69,6 +108,8 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassTutorVH
             date = itemView.findViewById(R.id.tvdate);
             time = itemView.findViewById(R.id.tvtime);
             cardView = itemView.findViewById(R.id.cardv01);
+            txt_option = itemView.findViewById(R.id.text_option);
+
         }
     }
 
