@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -132,6 +133,9 @@ public class teacherDetails extends Fragment {
                             @Override
                             public void onClick(DialogInterface dialog, int i) {
                                teacherDAO.delete(teacherEdit.getKey());
+                                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                fragmentTransaction.replace(R.id.frameLayout2,new AdminTeacherFragment());
+                                fragmentTransaction.commit();
 
                             }
                         })

@@ -5,13 +5,17 @@
     android:id="@+id/teacherCard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginLeft="05dp"
     android:layout_marginTop="12dp"
+    android:layout_marginRight="10dp"
     android:backgroundTint="#FFFFFF"
-    android:paddingBottom="16dp">
+    android:paddingBottom="16dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
+        android:layout_width="379dp"
         android:layout_height="93dp">
 
 
@@ -19,12 +23,13 @@
             android:id="@+id/teacherName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="28dp"
             android:paddingRight="32dp"
             android:textAlignment="center"
             android:textColor="@color/backgrondColor"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,10 +37,12 @@
             android:id="@+id/subject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="12dp"
+            android:textAlignment="center"
             android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@+id/teacherName"
-            app:layout_constraintStart_toStartOf="@+id/teacherName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/teacherName" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

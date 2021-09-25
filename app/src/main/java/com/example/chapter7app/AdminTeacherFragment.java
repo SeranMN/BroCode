@@ -26,11 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AdminTeacherFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class AdminTeacherFragment extends Fragment implements teacherListAdapter.teachrOnClickLisner{
 
     // TODO: Rename parameter arguments, choose names that match
@@ -58,26 +54,10 @@ public class AdminTeacherFragment extends Fragment implements teacherListAdapter
      * @param param2 Parameter 2.
      * @return A new instance of fragment AdminTeacherFragment.
      */
-    // TODO: Rename and change types and number of parameters
-    public static AdminTeacherFragment newInstance(String param1, String param2) {
-        AdminTeacherFragment fragment = new AdminTeacherFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
-    TeacherDAO teacherDAO;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    TeacherDAO teacherDAO = new TeacherDAO();
+
 
     teacherListAdapter adapter = new teacherListAdapter(this);
     TextView tv;
@@ -89,8 +69,8 @@ public class AdminTeacherFragment extends Fragment implements teacherListAdapter
         View view = inflater.inflate(R.layout.fragment_admin_teacher, container, false);
         Button button = (Button) view.findViewById(R.id.btn_add);
 
-        System.out.print("teachers");
-        teacherDAO = new TeacherDAO();
+
+
 
         loadData();
 
@@ -100,14 +80,14 @@ public class AdminTeacherFragment extends Fragment implements teacherListAdapter
 
             @Override
             public void onClick(View v) {
-//                FragmentTransaction fr = getFragmentManager().beginTransaction();
-//                fr.replace(R.id.frameLayout2,new AddTeacherFragment());
-//                fr.commit();
                 Intent intent;
                 intent = new Intent(getActivity(), addTeacher.class);
                 startActivity(intent);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                 tv = (TextView) view.findViewById(R.id.tv);
+//                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+//                transaction.hide(getActivity().getSupportFragmentManager().findFragmentByTag("AdminTeacherFragment"));
+               // transaction.addToBackStack(null);
+
+
 
             }
         });
@@ -123,7 +103,7 @@ public class AdminTeacherFragment extends Fragment implements teacherListAdapter
 
         return view;
     }
-View view;
+
     public void loadData() {
         teacherDAO.get().addValueEventListener(new ValueEventListener() {
             @Override
@@ -165,7 +145,6 @@ View view;
 
         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frameLayout2,fragment);
-        transaction.addToBackStack(null);
         transaction.commit();
     }
 }

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,6 +27,7 @@ teacherListAdapter adapter;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+         //String Id = getIntent().getExtras().getString("userID");
        MeowBottomNavigation bottomNavigation = findViewById(R.id.bottom_navigation);
 
         bottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.ic_baseline_home_24));
@@ -75,7 +77,7 @@ teacherListAdapter adapter;
                         break;
                     case 5:
 
-                        fragment = new AccountFragment();
+                        fragment =  new AccountFragment();
                         getSupportActionBar().setTitle("Account");
 
                 }

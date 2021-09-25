@@ -2,6 +2,8 @@ package com.example.chapter7app;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,6 +34,7 @@ Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_add_teacher);
         name = findViewById(R.id.et_name);
         nic = findViewById(R.id.et_nic);
@@ -119,8 +122,10 @@ Button btn;
 
            }
 
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+           transaction.replace(R.id.frameLayout2,new AdminTeacherFragment());
+           transaction.commit();
 
-            finish();
         }
     });
 

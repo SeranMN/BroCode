@@ -28,4 +28,8 @@
     <string name="nic">NIC no.</string>
     <string name="Update">Update</string>
     <string name="deletebtn">delete</string>
+    <string name="alYear">A/L Year</string>
+    <string name="pwd">Password</string>
+    <string name="confpwd">Confirm Password\'</string>
+    <string name="logout">Log Out</string>
 </resources>
