@@ -120,8 +120,8 @@ public class teacherDetails extends Fragment {
 
             private void alert(String s) {
                 AlertDialog dlg = new AlertDialog.Builder(getActivity())
-                        .setTitle("Delete Card Details")
-                        .setMessage("Are you sure?")
+                        .setTitle("Delete Teacher")
+                        .setMessage("Do you want to delete "+teacherEdit.getName())
 
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
                             @Override

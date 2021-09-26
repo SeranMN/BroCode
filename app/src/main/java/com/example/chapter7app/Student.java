@@ -10,6 +10,7 @@ public class Student implements Serializable {
     private String add;
     private int year;
     private String password;
+    private String type;
 
     public  Student (){}
 
@@ -19,6 +20,7 @@ public class Student implements Serializable {
         this.mob = mob;
         this.add = add;
         this.year = year;
+        this.type ="admin";
     }
 
     public String getName() {
@@ -67,5 +69,13 @@ public class Student implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

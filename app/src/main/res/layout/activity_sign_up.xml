@@ -76,17 +76,6 @@
         app:layout_constraintStart_toStartOf="@+id/textView21"
         app:layout_constraintTop_toBottomOf="@+id/etStudentPwd" />
 
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/purple_500"
-        android:text="@string/confpwd"
-        android:textColor="@color/backgrondColor"
-        app:layout_constraintStart_toStartOf="@+id/textView21"
-        app:layout_constraintTop_toBottomOf="@+id/etStudentPwd" />
-
     <EditText
         android:id="@+id/etStudentName"
         android:layout_width="338dp"
@@ -165,28 +154,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
-    <EditText
-        android:id="@+id/etStudentPwd2"
-        android:layout_width="338dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/purple_500"
-        android:ems="10"
-        android:hint="@string/Password"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22" />
-
     <Button
         android:id="@+id/btnADD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="164dp"
         android:layout_marginBottom="16dp"
         android:text="@string/submit"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etStudentPwd"
+        app:layout_constraintVertical_bias="0.542" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

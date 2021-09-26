@@ -52,7 +52,7 @@ public class SignUp extends AppCompatActivity {
         email = findViewById(R.id.etStudentMail);
         alYear = findViewById(R.id.studentALYear);
         pwd = findViewById(R.id.etStudentPwd);
-        conPwd = findViewById(R.id.etStudentPwd2);
+
         mAuth = FirebaseAuth.getInstance();
 
         Button button = findViewById(R.id.btnADD);
@@ -68,7 +68,7 @@ public class SignUp extends AppCompatActivity {
                 stuEmail = email.getText().toString();
                 stuAlYear= Integer.parseInt(alYear.getText().toString());
                 stuPwd = pwd.getText().toString();
-                stuPwd2 = conPwd.getText().toString();
+//                stuPwd2 = conPwd.getText().toString();
                 if(stuEmail.isEmpty()){
                     email.setError("Enter Email");
                     email.requestFocus();
@@ -97,8 +97,8 @@ public class SignUp extends AppCompatActivity {
                             mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                                 String user = mAuth.getCurrentUser().getUid().toString();
                                 @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if(task.isSuccessful()){
+                              public void onComplete(@NonNull Task<Void> task) {
+                                   if(task.isSuccessful()){
                                         dao.add(student,user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void unused) {

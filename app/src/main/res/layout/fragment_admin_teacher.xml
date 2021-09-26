@@ -19,7 +19,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/teacherListAdmin"
-        android:layout_width="match_parent"
+        android:layout_width="378dp"
         android:layout_height="657dp" />
 
 

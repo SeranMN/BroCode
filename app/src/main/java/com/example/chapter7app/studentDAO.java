@@ -16,7 +16,7 @@ public class studentDAO {
     public Task <Void> add(Student student,String ID){
         return databaseReference.child(ID).setValue(student);
     }
-    public Query get (String id){
-        return databaseReference.orderByKey().equalTo(id);
+    public Query get (){
+        return databaseReference.orderByKey();
     }
 }

@@ -87,7 +87,8 @@ Button btn;
                teacherDAO.add(teacher).addOnSuccessListener(new OnSuccessListener<Void>() {
                                                                 @Override
                                                                 public void onSuccess(Void unused) {
-                                                                    Toast.makeText(getApplicationContext(), "Teacher Added", Toast.LENGTH_SHORT).show();
+                                                                    Toast.makeText(getApplicationContext(),
+                                                                            "Teacher Added", Toast.LENGTH_SHORT).show();
                                                                 }
                                                             }
 
@@ -109,7 +110,8 @@ Button btn;
                teacherDAO.update(teacherEdit.getKey(),hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                                                                 @Override
                                                                 public void onSuccess(Void unused) {
-                                                                    Toast.makeText(getApplicationContext(), "Teacher Added", Toast.LENGTH_SHORT).show();
+                                                                    Toast.makeText(getApplicationContext(),
+                                                                            "Teacher Updated", Toast.LENGTH_SHORT).show();
                                                                 }
                                                             }
 

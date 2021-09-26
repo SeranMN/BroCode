@@ -27,7 +27,7 @@ teacherListAdapter adapter;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-         //String Id = getIntent().getExtras().getString("userID");
+         //String user = getIntent().getExtras().getString("type");
        MeowBottomNavigation bottomNavigation = findViewById(R.id.bottom_navigation);
 
         bottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.ic_baseline_home_24));
@@ -36,7 +36,7 @@ teacherListAdapter adapter;
         bottomNavigation.add(new MeowBottomNavigation.Model(4,R.drawable.ic_baseline_notifications_24));
         bottomNavigation.add(new MeowBottomNavigation.Model(5,R.drawable.ic_baseline_account_circle_24));
 
-        String user = "admin"; //bundle.getString("user");
+         String user = bundle.getString("type");
 
         bottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
             @Override

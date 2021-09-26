@@ -29,7 +29,7 @@
     <EditText
         android:id="@+id/et_UserName"
         android:layout_width="326dp"
-        android:layout_height="36dp"
+        android:layout_height="48dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/purple_700"
         android:ems="10"
@@ -43,7 +43,7 @@
     <EditText
         android:id="@+id/et_userPassword"
         android:layout_width="326dp"
-        android:layout_height="34dp"
+        android:layout_height="48dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/purple_700"
         android:ems="10"
@@ -100,5 +100,14 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/forgetPWD"
+        app:layout_constraintStart_toStartOf="@+id/et_userPassword"
+        app:layout_constraintTop_toBottomOf="@+id/et_userPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

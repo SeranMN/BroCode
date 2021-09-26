@@ -32,4 +32,5 @@
     <string name="pwd">Password</string>
     <string name="confpwd">Confirm Password\'</string>
     <string name="logout">Log Out</string>
+    <string name="forgetPWD">Forget Password</string>
 </resources>
