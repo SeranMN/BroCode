@@ -67,7 +67,7 @@ public class AddClass extends AppCompatActivity {
                     dao.add(cla).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
-                            Toast.makeText(getApplicationContext(), "Marks Added", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Class Added", Toast.LENGTH_SHORT).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
