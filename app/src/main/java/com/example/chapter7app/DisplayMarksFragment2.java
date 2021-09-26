@@ -2,16 +2,14 @@ package com.example.chapter7app;
 
 import android.os.Bundle;
 
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-
-public class AdminHomeFragment extends Fragment {
+public class DisplayMarksFragment2 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,15 +19,20 @@ public class AdminHomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    String testno,studentid,marks;
 
-    public AdminHomeFragment() {
-        // Required empty public constructor
+    public DisplayMarksFragment2(){}
+
+    public DisplayMarksFragment2(String testno,String studentid,String marks) {
+       this.testno=testno;
+       this.studentid=studentid;
+       this.marks=marks;
     }
 
 
     // TODO: Rename and change types and number of parameters
-    public static AdminHomeFragment newInstance(String param1, String param2) {
-        AdminHomeFragment fragment = new AdminHomeFragment();
+    public static DisplayMarksFragment2 newInstance(String param1, String param2) {
+        DisplayMarksFragment2 fragment = new DisplayMarksFragment2();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -50,18 +53,15 @@ public class AdminHomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_admin_home, container, false);
-        CardView cardview=(CardView) v.findViewById(R.id.cardaddmark);
+      View v= inflater.inflate(R.layout.fragment_display_marks2, container, false);
 
-        cardview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction fr =getFragmentManager().beginTransaction();
-                fr.replace(R.id.frameLayout2,new AdminAddMarksFragment());
-                fr.commit();
-            }
-        });
+      TextView testno1=v.findViewById(R.id.tstno);
+      TextView studentid1=v.findViewById(R.id.stid);
+      TextView mark1=v.findViewById(R.id.mar);
 
-        return v;
+      testno1.setText(testno);
+      studentid1.setText(studentid);
+      mark1.setText(marks);
+      return v;
     }
 }
