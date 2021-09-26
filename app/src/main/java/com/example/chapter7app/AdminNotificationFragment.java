@@ -1,19 +1,32 @@
 package com.example.chapter7app;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link AdminNotificationFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AdminNotificationFragment extends Fragment {
+public class AdminNotificationFragment extends Fragment implements NotificationListAdapter.notificationOnClickListener{
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,6 +39,10 @@ public class AdminNotificationFragment extends Fragment {
 
     public AdminNotificationFragment() {
         // Required empty public constructor
+    }
+
+    public AdminNotificationFragment(NotificationListAdapter adapter){
+        this.adapter = adapter;
     }
 
     /**
@@ -46,6 +63,8 @@ public class AdminNotificationFragment extends Fragment {
         return fragment;
     }
 
+    NotificationDAO notificationDAO;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,10 +74,74 @@ public class AdminNotificationFragment extends Fragment {
         }
     }
 
+    NotificationListAdapter adapter = new NotificationListAdapter(this);
+    TextView tvAnnouncement;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_admin_notification, container, false);
+        View view = inflater.inflate(R.layout.fragment_admin_notification, container, false);
+        Button button = (Button) view.findViewById(R.id.btn_addnewnoti);
+
+        notificationDAO = new NotificationDAO();
+        loadData();
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),Add_Notification.class);
+                startActivity(intent);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                tvAnnouncement = (TextView) view.findViewById(R.id.tvAnnouncement);
+            }
+        });
+
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.NotificationListAdmin);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager manager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(manager);
+        recyclerView.setAdapter(adapter);
+
+        return view;
+    }
+
+    View view;
+    public void loadData(){
+        notificationDAO.get().addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ArrayList<Notification> notifications = new ArrayList<>();
+                Notification notification = new Notification();
+
+                ArrayList<Notification> not = notifications;
+                if (snapshot.hasChildren()){
+                    for (DataSnapshot data : snapshot.getChildren()){
+                        notification = data.getValue(Notification.class);
+
+                        notification.setKey(data.getKey());
+                        notifications.add(notification);
+                    }
+                    adapter.setNotifications(notifications);
+                    adapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+
+    @Override
+    public void onClick(Notification notification) {
+        Fragment fragment = NotificationDetails.newInstance(notification);
+
+        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frameLayout2,fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
