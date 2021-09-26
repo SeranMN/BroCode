@@ -99,7 +99,7 @@ public class Home extends AppCompatActivity {
 
     }
     private void loadFragment(Fragment fragment){
-        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,fragment)
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout2,fragment)
                 .commit();
     }
 

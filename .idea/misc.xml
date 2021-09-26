@@ -3,23 +3,45 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Brocode/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22916666666666666" />
+        <entry key="..\:/Brocode/app/src/main/res/drawable/box.xml" value="0.264" />
+        <entry key="..\:/Brocode/app/src/main/res/drawable/box2.xml" value="0.2175925925925926" />
         <entry key="..\:/Brocode/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1734375" />
+        <entry key="..\:/Brocode/app/src/main/res/drawable/ic_baseline_class_24.xml" value="0.22916666666666666" />
+        <entry key="..\:/Brocode/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.22916666666666666" />
+        <entry key="..\:/Brocode/app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.22916666666666666" />
+        <entry key="..\:/Brocode/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22916666666666666" />
         <entry key="..\:/Brocode/app/src/main/res/layout/activity_add_marks.xml" value="0.264" />
         <entry key="..\:/Brocode/app/src/main/res/layout/activity_admin_view.xml" value="0.19010416666666666" />
         <entry key="..\:/Brocode/app/src/main/res/layout/activity_display_classes_marks.xml" value="0.24010416666666667" />
         <entry key="..\:/Brocode/app/src/main/res/layout/activity_display_test_no.xml" value="0.16666666666666666" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/activity_home.xml" value="0.20606884057971014" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/activity_login.xml" value="0.20606884057971014" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/activity_login2.xml" value="0.20606884057971014" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/activity_main.xml" value="0.20606884057971014" />
         <entry key="..\:/Brocode/app/src/main/res/layout/activity_select_class.xml" value="0.19010416666666666" />
         <entry key="..\:/Brocode/app/src/main/res/layout/activity_show_marks.xml" value="0.20923913043478262" />
         <entry key="..\:/Brocode/app/src/main/res/layout/activity_testno.xml" value="0.25416666666666665" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/content_login.xml" value="0.20606884057971014" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/fragment_account.xml" value="0.20606884057971014" />
         <entry key="..\:/Brocode/app/src/main/res/layout/fragment_admin_add_marks.xml" value="0.24010416666666667" />
         <entry key="..\:/Brocode/app/src/main/res/layout/fragment_admin_class.xml" value="0.17255434782608695" />
         <entry key="..\:/Brocode/app/src/main/res/layout/fragment_admin_home.xml" value="0.264" />
         <entry key="..\:/Brocode/app/src/main/res/layout/fragment_admin_notification.xml" value="0.17255434782608695" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/fragment_admin_teacher.xml" value="0.20606884057971014" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/fragment_classes.xml" value="0.20606884057971014" />
         <entry key="..\:/Brocode/app/src/main/res/layout/fragment_display_marks.xml" value="0.24010416666666667" />
         <entry key="..\:/Brocode/app/src/main/res/layout/fragment_display_marks2.xml" value="0.20923913043478262" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/fragment_first.xml" value="0.20606884057971014" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/fragment_home.xml" value="0.20606884057971014" />
         <entry key="..\:/Brocode/app/src/main/res/layout/fragment_itemlist.xml" value="0.21875" />
-        <entry key="..\:/Brocode/app/src/main/res/layout/item.xml" value="0.16" />
-        <entry key="..\:/Brocode/app/src/main/res/layout/item2.xml" value="0.264" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/fragment_notification.xml" value="0.20606884057971014" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/fragment_second.xml" value="0.20606884057971014" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/fragment_teachers.xml" value="0.20606884057971014" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/home_fragment.xml" value="0.20606884057971014" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/item.xml" value="0.2" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/item2.xml" value="0.4" />
+        <entry key="..\:/Brocode/app/src/main/res/layout/textviewborder.xml" value="0.20606884057971014" />
         <entry key="..\:/MAD project final/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.14635416666666667" />
         <entry key="..\:/MAD project final/app/src/main/res/drawable/ic_baseline_class_24.xml" value="0.14635416666666667" />
         <entry key="..\:/MAD project final/app/src/main/res/layout/activity_admin_view.xml" value="0.13020833333333334" />

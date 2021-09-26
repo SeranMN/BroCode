@@ -57,7 +57,7 @@ public class AddMarks extends AppCompatActivity {
 
         }
         else{
-            btn.setText("Submit");
+            btn.setText("Add");
 
         }
 

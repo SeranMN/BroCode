@@ -28,8 +28,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/dashboard"
-                android:textColor="#FF9800"
-                android:textSize="20dp" />
+                android:textColor="@color/backgrondColor"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
 
             <ImageView
@@ -51,65 +52,68 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+                android:layout_columnWeight="1"
                 android:layout_margin="12dp"
-                android:layout_marginBottom="50dp">
+                android:layout_marginBottom="50dp"
+                android:backgroundTint="@color/mad2"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:orientation="vertical"
-                    android:padding="20dp"
-                    android:layout_gravity="center">
+                    android:padding="20dp">
 
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/adminteacher"
-                        />
+                        android:src="@drawable/adminteacher" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:textColor="#000"
                         android:text="Add Teacher"
-                        />
+                        android:textColor="@color/design_default_color_on_secondary" />
 
 
                 </LinearLayout>
 
 
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+                android:layout_columnWeight="1"
                 android:layout_margin="12dp"
-                android:layout_marginBottom="50dp">
+                android:layout_marginBottom="50dp"
+                android:backgroundTint="@color/mad2"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp"
-                    android:layout_gravity="center">
+                    android:padding="16dp">
 
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/adminclass"/>
+                        android:src="@drawable/adminclass" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:textColor="#000"
-                        android:text="Add Classes"/>
+                        android:text="Add Classes"
+                        android:textColor="@color/black" />
 
 
                 </LinearLayout>
@@ -124,9 +128,9 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
+                android:backgroundTint="@color/mad2"
                 app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                >
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -145,40 +149,43 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:text="Add Marks"
-                        android:textColor="#000" />
+                        android:textColor="@color/black" />
 
 
                 </LinearLayout>
 
 
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                android:backgroundTint="@color/mad2"
                 app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
+                app:cardElevation="6dp">
 
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp"
-                    android:layout_gravity="center">
+                    android:padding="16dp">
 
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/notification"/>
+                        android:src="@drawable/notification" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:textColor="#000"
-                        android:text="Add Notification"/>
+                        android:text="Add Notification"
+                        android:textColor="@color/black" />
 
 
                 </LinearLayout>

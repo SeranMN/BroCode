@@ -57,7 +57,7 @@ public class AdminHomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fr =getFragmentManager().beginTransaction();
-                fr.replace(R.id.frameLayout,new AdminAddMarksFragment());
+                fr.replace(R.id.frameLayout2,new AdminAddMarksFragment());
                 fr.commit();
             }
         });
