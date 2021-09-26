@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "932303795927",
+    "firebase_url": "https://chapter-7-app-default-rtdb.firebaseio.com",
+    "project_id": "chapter-7-app",
+    "storage_bucket": "chapter-7-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932303795927:android:280962d7f79ee9a79da292",
+        "android_client_info": {
+          "package_name": "com.example.chapter7app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "932303795927-a08dqphilc7b04ospnpi03dg2d1d74j1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqeS8u9rjYXu9uaeq4l8AgVObU284QKT8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "932303795927-a08dqphilc7b04ospnpi03dg2d1d74j1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Add_Notification">
+
+    <TextView
+        android:id="@+id/txtTopic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="76dp"
+        android:text="@string/txtTopic"
+        android:textColor="@color/backgrondColor"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="106dp"
+        android:text="@string/txtDate"
+        android:textColor="@color/backgrondColor"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/txtMessage"
+        app:layout_constraintTop_toBottomOf="@+id/txtMessage" />
+
+    <EditText
+        android:id="@+id/et_Topic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:backgroundTint="@color/purple_700"
+        android:ems="10"
+        android:hint="@string/txtTopic"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtTopic"
+        app:layout_constraintStart_toEndOf="@+id/txtTopic" />
+
+    <EditText
+        android:id="@+id/et_Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_700"
+        android:drawableEnd="@drawable/icon_calendar"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="@string/txtDate"
+        android:inputType="date"
+        android:minHeight="48dp"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtDate"
+        app:layout_constraintEnd_toEndOf="@+id/et_Message" />
+
+    <EditText
+        android:id="@+id/et_Time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_700"
+        android:drawableEnd="@drawable/icon_time"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="@string/txtTime"
+        android:inputType="time"
+        android:minHeight="48dp"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtTime"
+        app:layout_constraintEnd_toEndOf="@+id/et_Date" />
+
+    <Spinner
+        android:id="@+id/spinner_Class"
+        android:layout_width="188dp"
+        android:layout_height="48dp"
+        android:backgroundTint="@color/purple_700"
+        android:entries="@array/ALYear"
+        android:minHeight="48dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtClass"
+        app:layout_constraintEnd_toEndOf="@+id/et_Time" />
+
+    <TextView
+        android:id="@+id/txtTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/txtTime"
+        android:textColor="@color/backgrondColor"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/txtDate"
+        app:layout_constraintTop_toBottomOf="@+id/txtDate" />
+
+    <TextView
+        android:id="@+id/txtClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/txtClass"
+        android:textColor="@color/backgrondColor"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/txtTime"
+        app:layout_constraintTop_toBottomOf="@+id/txtTime" />
+
+    <Button
+        android:id="@+id/btn_Add_Announcement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="140dp"
+        android:text="@string/btn_Add_Announcement"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/txtMessage"
+        android:textColor="@color/backgrondColor"
+        app:layout_constraintStart_toStartOf="@+id/txtTopic"
+        app:layout_constraintTop_toBottomOf="@+id/txtTopic" />
+
+    <EditText
+        android:id="@+id/et_Message"
+        android:layout_width="189dp"
+        android:layout_height="113dp"
+        android:backgroundTint="@color/purple_700"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/et_Message"
+        android:inputType="textMultiLine"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtMessage"
+        app:layout_constraintEnd_toEndOf="@+id/et_Topic" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
