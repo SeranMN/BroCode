@@ -1,14 +1,14 @@
 package com.example.chapter7app;
 
-import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 
 public class AdminHomeFragment extends Fragment {
@@ -50,8 +50,18 @@ public class AdminHomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_admin_home, container, false);
+        View v= inflater.inflate(R.layout.fragment_admin_home, container, false);
+        CardView cardview=(CardView) v.findViewById(R.id.cardaddmark);
 
-        return view;
+        cardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fr =getFragmentManager().beginTransaction();
+                fr.replace(R.id.frameLayout2,new AdminAddMarksFragment());
+                fr.commit();
+            }
+        });
+
+        return v;
     }
 }

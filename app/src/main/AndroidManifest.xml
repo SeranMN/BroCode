@@ -8,7 +8,38 @@
         android:label="Chapter 7"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Chapter7App">
+        android:theme="@style/Theme.Chapter7App"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".SignUp"
+            android:exported="true" />
+        <activity
+            android:name=".addTeacher"
+            android:exported="true"
+            android:parentActivityName=".Home"/>
+        <activity
+            android:name=".Add_Notification"
+            android:exported="true" />
+        <activity
+            android:name=".ShowMarks"
+            android:exported="true" />
+        <activity
+            android:name=".DisplayTestNo"
+            android:exported="true" />
+        <activity
+            android:name=".Testno"
+            android:exported="true" />
+        <!--
+<activity
+            android:name=".DisplayClassesMarks"
+            android:exported="true" />
+        -->
+        <activity
+            android:name=".AddMarks"
+            android:exported="true" />
+        <activity
+            android:name=".SelectClass"
+            android:exported="true"></activity>
         <activity
             android:name=".AddClass"
             android:exported="true" />
@@ -22,7 +53,7 @@
             android:exported="true" />
         <activity
             android:name=".Home"
-            android:exported="true" />
+            android:exported="true"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
