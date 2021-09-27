@@ -17,6 +17,16 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="txt01">Tutor Name</string>
+    <string name="txt02">Specialization</string>
+    <string name="txt05">Date</string>
+    <string name="txt06">Time</string>
+    <string name="txt03">A/L Year</string>
+    <string name="txt04">Subject</string>
+    <string name="txt07">Degree</string>
+    <string name="btn02">Add Class</string>
+    <string name="btn03">Add Class</string>
+    <string name="btn04">Submit</string>
     <string name="dashboard">Dashboard</string>
     <string name="btnaddmarks">Add marks</string>
     <string name="lblclsid">Class ID   :</string>
