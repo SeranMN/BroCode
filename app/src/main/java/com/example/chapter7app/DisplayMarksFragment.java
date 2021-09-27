@@ -65,6 +65,8 @@ public class DisplayMarksFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         ArrayList<Marks> list = new ArrayList<>();
+        ArrayList<String> val =new ArrayList<>();
+
 
         MarkListAdapter markListAdapter=new MarkListAdapter(getActivity(),list);
         recyclerView.setAdapter(markListAdapter);
@@ -77,9 +79,13 @@ public class DisplayMarksFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot:snapshot.getChildren()){
                     Marks marks=dataSnapshot.getValue(Marks.class);
-                    list.add(marks);
-
+                    if(!val.contains(marks.getClsID())) {
+                        list.add(marks);
+                    }
+                    val.add(marks.getClsID());
                 }
+
+
                 markListAdapter.notifyDataSetChanged();
             }
 
