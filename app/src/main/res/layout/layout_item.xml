@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/cardv01"
     android:layout_width="match_parent"
-    android:layout_height="280dp"
+    android:layout_height="260dp"
     android:layout_margin="3dp">
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="8dp"
@@ -25,6 +25,31 @@
         android:layout_marginLeft="16dp"
         android:orientation="vertical">
 
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Class ID :"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/claid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="cls1"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,7 +68,7 @@
                 android:id="@+id/tvtutorName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
+                android:layout_gravity="center"
                 android:text="Aruna Gallage"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
@@ -165,14 +190,5 @@
 
         </LinearLayout>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_enroll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="220dp"
-        android:text="Enroll"
-        android:textColor="@color/white" />
 
 </androidx.cardview.widget.CardView>

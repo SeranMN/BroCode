@@ -21,6 +21,7 @@ public class AddClass extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_class);
+        EditText edit_ClassID =findViewById(R.id.txtclaid);
         EditText edit_TutorName = findViewById(R.id.edtxt01);
         EditText edit_Degree = findViewById(R.id.edtxt04);
         EditText edit_ALYear = findViewById(R.id.edtxtn01);
@@ -38,11 +39,13 @@ public class AddClass extends AppCompatActivity {
         if(cla_edit !=null)
         {
             btn.setText("UPDATE");
+            edit_ClassID.setText(cla_edit.getClsid());
+
             edit_TutorName.setText(cla_edit.getTutor());
             edit_Degree.setText(cla_edit.getDegree());
             edit_ALYear.setText(cla_edit.getAlYear());
             edit_Subject.setText(cla_edit.getSubject());
-            edit_Degree.setText(cla_edit.getDegree());
+            edit_Date.setText(cla_edit.getDate());
             edit_Time.setText(cla_edit.getTime());
 
         }
@@ -56,6 +59,7 @@ public class AddClass extends AppCompatActivity {
             public void onClick(View v) {
                 ClassTutor cla = new ClassTutor
                         (
+                                edit_ClassID.getText().toString(),
                                 edit_TutorName.getText().toString(),
                                 edit_Degree.getText().toString(),
                                 edit_ALYear.getText().toString(),
@@ -79,6 +83,7 @@ public class AddClass extends AppCompatActivity {
                 else
                 {
                     HashMap<String, Object> hashMap = new HashMap<>();
+                    hashMap.put("clsid",edit_ClassID.getText().toString());
                     hashMap.put("tutor", edit_TutorName.getText().toString());
                     hashMap.put("degree", edit_Degree.getText().toString());
                     hashMap.put("alYear", edit_ALYear.getText().toString());

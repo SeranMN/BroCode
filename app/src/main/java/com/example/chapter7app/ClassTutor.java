@@ -8,6 +8,7 @@ import java.sql.Time;
 public class ClassTutor implements Serializable {
 
     @Exclude
+     String clsid;
      String tutor;
      String degree;
      String alYear;
@@ -17,7 +18,8 @@ public class ClassTutor implements Serializable {
      String key;
 
     public ClassTutor(){}
-    public ClassTutor(String tutor, String degree, String alYear, String subject, String date, String time) {
+    public ClassTutor(String clsid,String tutor, String degree, String alYear, String subject, String date, String time) {
+        this.clsid=clsid;
         this.tutor = tutor;
         this.degree = degree;
         this.alYear = alYear;
@@ -25,6 +27,13 @@ public class ClassTutor implements Serializable {
         this.date = date;
         this.time = time;
 
+    }
+    public String getClsid() {
+        return clsid;
+    }
+
+    public void setClsid(String clsid) {
+        this.clsid = clsid;
     }
 
     public String getTutor() {
@@ -82,5 +91,6 @@ public class ClassTutor implements Serializable {
     public void setKey(String key) {
         this.key = key;
     }
+
 
 }
