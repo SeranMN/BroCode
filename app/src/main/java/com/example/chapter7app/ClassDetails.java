@@ -42,7 +42,7 @@ public class ClassDetails extends Fragment {
     public static ClassDetails newInstance(ClassTutor classTutor) {
         ClassDetails fragment = new ClassDetails();
         Bundle args = new Bundle();
-        args.putString(ARG_Topic, classTutor.getAlYear()+classTutor.getSubject());
+        args.putString(ARG_Topic, classTutor.getAlYear()  +classTutor.getSubject());
         args.putString(ARG_Tutor, classTutor.getTutor());
         args.putString(ARG_Degree, classTutor.getDegree());
         args.putString(ARG_Date, classTutor.getDate());

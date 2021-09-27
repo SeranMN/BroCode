@@ -50,6 +50,7 @@ public class StudentClassAdapter extends RecyclerView.Adapter<StudentClassAdapte
         holder.tutorName.setText(classTutor.getTutor().toString());
         holder.subject.setText(classTutor.getSubject());
         holder.alYear.setText(classTutor.getAlYear());
+        holder.degree.setText(classTutor.getDegree());
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +76,7 @@ public class StudentClassAdapter extends RecyclerView.Adapter<StudentClassAdapte
         public ClassTutorVH(@NonNull View itemView){
             super(itemView);
             tutorName = itemView.findViewById(R.id.tvtutorNamestd);
-//            degree = itemView.findViewById(R.id.tvdegree);
+            degree = itemView.findViewById(R.id.tvdegreestd);
             alYear = itemView.findViewById(R.id.tvalYearstd);
             subject = itemView.findViewById(R.id.tvsubjectstd);
 //            date = itemView.findViewById(R.id.tvdate);
