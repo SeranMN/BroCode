@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AdminTeacherFragment">
+    tools:context=".AdminTeacherFragment"
+    android:id="@+id/linearLayout3">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -13,14 +14,30 @@
         android:id="@+id/btn_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="4dp"
-        android:text="@string/add" />
+        android:layout_marginLeft="25dp"
+        android:text="@string/add"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="88dp"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="4dp" />
+
+    <ProgressBar
+        android:id="@+id/adminSpin"
+        android:layout_width="404dp"
+        android:layout_height="wrap_content"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="393dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="52dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/teacherListAdmin"
-        android:layout_width="378dp"
-        android:layout_height="657dp" />
+        android:layout_width="match_parent"
+        android:layout_height="553dp"
+        tools:layout_conversion_absoluteHeight="565dp"
+        tools:layout_conversion_absoluteWidth="353dp"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="100dp" />
 
 
 </LinearLayout>

@@ -18,6 +18,8 @@ public class MarkListAdapter extends RecyclerView.Adapter<MarkListAdapter.MyView
 
     ArrayList<Marks> list;
 
+
+
     public MarkListAdapter(Context context, ArrayList<Marks> list) {
         this.context = context;
         this.list = list;
@@ -33,13 +35,18 @@ public class MarkListAdapter extends RecyclerView.Adapter<MarkListAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull MarkListAdapter.MyViewHolder holder, int position) {
         Marks marks=list.get(position);
-        holder.classID.setText(marks.getClsID());
-        holder.testno.setText(marks.getTestno());
+
+
+
+
+            holder.classID.setText(marks.getClsID());
+            /*holder.testno.setText(marks.getTestno());*/
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),ShowMarks.class);
+                Intent intent=new Intent(v.getContext(),Showtests.class);
                 Bundle bundle=new Bundle();
                 bundle.putSerializable("key",marks);
                 intent.putExtras(bundle);
@@ -65,7 +72,7 @@ public class MarkListAdapter extends RecyclerView.Adapter<MarkListAdapter.MyView
             super(itemView);
 
             classID=itemView.findViewById(R.id.clsidn);
-            testno=itemView.findViewById(R.id.testnonn);
+            /*testno=itemView.findViewById(R.id.testnonn);*/
 
 
         }

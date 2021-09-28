@@ -3,6 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Chapter 7 final/app/src/main/res/layout/activity_add_teacher.xml" value="0.264" />
+        <entry key="..\:/Chapter 7 final/app/src/main/res/layout/activity_admin_view.xml" value="0.16799999999999998" />
+        <entry key="..\:/Chapter 7 final/app/src/main/res/layout/activity_home.xml" value="0.21403508771929824" />
+        <entry key="..\:/Chapter 7 final/app/src/main/res/layout/activity_login.xml" value="0.16403508771929826" />
+        <entry key="..\:/Chapter 7 final/app/src/main/res/layout/activity_login2.xml" value="0.536" />
+        <entry key="..\:/Chapter 7 final/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
+        <entry key="..\:/Chapter 7 final/app/src/main/res/layout/content_login.xml" value="0.16403508771929826" />
+        <entry key="..\:/Chapter 7 final/app/src/main/res/layout/fragment_account.xml" value="0.264" />
+        <entry key="..\:/Chapter 7 final/app/src/main/res/layout/fragment_add_teacher.xml" value="0.21403508771929824" />
+        <entry key="..\:/Chapter 7 final/app/src/main/res/layout/fragment_admin_class.xml" value="0.21403508771929824" />
+        <entry key="..\:/Chapter 7 final/app/src/main/res/layout/fragment_admin_teacher.xml" value="0.4" />
+        <entry key="..\:/Chapter 7 final/app/src/main/res/layout/fragment_teacher_det.xml" value="0.264" />
+        <entry key="..\:/Chapter 7 final/app/src/main/res/layout/fragment_teacher_details.xml" value="0.4" />
+        <entry key="..\:/Chapter 7 final/app/src/main/res/layout/fragment_teachers.xml" value="0.4" />
+        <entry key="..\:/Chapter 7 final/app/src/main/res/layout/teacherlist.xml" value="0.536" />
         <entry key="..\:/MAD project final/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.14635416666666667" />
         <entry key="..\:/MAD project final/app/src/main/res/drawable/ic_baseline_class_24.xml" value="0.14635416666666667" />
         <entry key="..\:/MAD project final/app/src/main/res/layout/activity_admin_view.xml" value="0.13020833333333334" />

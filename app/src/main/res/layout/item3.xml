@@ -17,6 +17,7 @@
         android:layout_marginLeft="16dp"
         android:orientation="vertical">
 
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,27 +27,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Class ID : "
+                android:text="Test No : "
                 android:textColor="@color/black"
                 android:textSize="26dp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/clsidn"
+                android:id="@+id/testnonn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cls1"
+                android:text="1"
                 android:textColor="@color/black"
                 android:textSize="26dp"
                 android:textStyle="bold" />
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal"/>
 
 
     </LinearLayout>
