@@ -18,10 +18,16 @@
         android:text="@string/btn_Add"
         android:textColor="@color/white" />
 
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/NotificationListAdmin"
         android:layout_width="match_parent"
-        android:layout_height="591dp" />
+        android:layout_height="554dp" />
 
     <TextView
         android:id="@+id/tvAnnouncement"

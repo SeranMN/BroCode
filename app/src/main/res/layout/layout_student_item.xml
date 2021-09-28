@@ -1,126 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardv01std"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="180dp"
     android:layout_marginStart="10dp"
     android:layout_marginTop="12dp"
     android:layout_marginEnd="10dp"
+    app:cardBackgroundColor="@color/cardClour"
     app:cardCornerRadius="8dp"
-    app:cardElevation="16dp">
+    app:cardElevation="50dp">
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="8dp"
     app:cardCornerRadius="8dp"
-    android:layout_margin="16dp">
+    android:layout_margin="dp">
 
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="265dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="120dp"
-        android:orientation="vertical">
+        android:layout_marginLeft="120dp">
 
-        <LinearLayout
+
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Tutor Name :"-->
+        <!--                android:textColor="@color/black"-->
+        <!--                android:textSize="26sp"-->
+        <!--                android:textStyle="bold" />-->
+
+
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Degree :"-->
+        <!--                android:textColor="@color/black"-->
+        <!--                android:textSize="26sp"-->
+        <!--                android:textStyle="bold" />-->
+
+
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="A/L Year :"-->
+        <!--                android:textColor="@color/black"-->
+        <!--                android:textSize="26sp"-->
+        <!--                android:textStyle="bold" />-->
+
+
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Subject :"-->
+        <!--                android:textColor="@color/black"-->
+        <!--                android:textSize="26sp"-->
+        <!--                android:textStyle="bold" />-->
+
+        <TextView
+            android:id="@+id/tvtutorNamestd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:text="Aruna Gamage"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tutor Name :"
-                android:textColor="@color/black"
-                android:textSize="26sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvtutorNamestd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:text="Aruna Gallage"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvdegreestd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_marginTop="12dp"
+            android:text="BSc.(Hons)Physics"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvtutorNamestd"
+            app:layout_constraintTop_toBottomOf="@+id/tvtutorNamestd" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Degree :"
-                android:textColor="@color/black"
-                android:textSize="26sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvdegreestd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BSc.(Hons)Physics"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvalYearstd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:text="2022"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvdegreestd"
+            app:layout_constraintTop_toBottomOf="@+id/tvdegreestd" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="A/L Year :"
-                android:textColor="@color/black"
-                android:textSize="26sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvalYearstd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2022"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvsubjectstd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Subject :"
-                android:textColor="@color/black"
-                android:textSize="26sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvsubjectstd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Physics"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-        </LinearLayout>
+            android:layout_marginTop="12dp"
+            android:text="Physics"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvalYearstd"
+            app:layout_constraintTop_toBottomOf="@+id/tvalYearstd" />
 
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="120dp"
-        android:layout_height="155dp"
+        android:layout_width="116dp"
+        android:layout_height="142dp"
         app:srcCompat="@drawable/adminteacher" />
 
 

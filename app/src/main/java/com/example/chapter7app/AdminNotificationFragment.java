@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -76,6 +77,8 @@ public class AdminNotificationFragment extends Fragment implements NotificationL
 
     NotificationListAdapter adapter = new NotificationListAdapter(this);
     TextView tvAnnouncement;
+    ProgressBar progressBar;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -83,6 +86,7 @@ public class AdminNotificationFragment extends Fragment implements NotificationL
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_admin_notification, container, false);
         Button button = (Button) view.findViewById(R.id.btn_addnewnoti);
+        progressBar = view.findViewById(R.id.progressBar2);
 
         notificationDAO = new NotificationDAO();
         loadData();
@@ -117,11 +121,13 @@ public class AdminNotificationFragment extends Fragment implements NotificationL
                 ArrayList<Notification> not = notifications;
                 if (snapshot.hasChildren()){
                     for (DataSnapshot data : snapshot.getChildren()){
+                        progressBar.setVisibility(View.VISIBLE);
                         notification = data.getValue(Notification.class);
 
                         notification.setKey(data.getKey());
                         notifications.add(notification);
                     }
+                    progressBar.setVisibility(View.GONE);
                     adapter.setNotifications(notifications);
                     adapter.notifyDataSetChanged();
                 }
