@@ -67,6 +67,44 @@ public class AddClass extends AppCompatActivity {
                                 edit_Date.getText().toString(),
                                 edit_Time.getText().toString()
                         );
+                if (cla.getClsid().isEmpty()) {
+                    edit_ClassID.setError("Enter ClsID");
+                    edit_ClassID.requestFocus();
+                    return;
+                }
+                if (cla.getTutor().isEmpty()){
+                    edit_TutorName.setError("Enter Tutor");
+                    edit_TutorName.requestFocus();
+                    return;
+                }
+                if (cla.getDegree().isEmpty()){
+                    edit_Degree.setError("Enter Degree");
+                    edit_Degree.requestFocus();
+                    return;
+                }
+                if (cla.getAlYear().isEmpty()){
+                    edit_ALYear.setError("Enter AL year");
+                    edit_ALYear.requestFocus();
+                    return;
+                }
+                if (cla.getSubject().isEmpty()){
+                    edit_Subject.setError("Enter Subject");
+                    edit_Subject.requestFocus();
+                    return;
+                }
+                if (cla.getDate().isEmpty()){
+                    edit_Date.setError("Enter Date");
+                    edit_Date.requestFocus();
+                    return;
+                }
+                if (cla.getTime().isEmpty()){
+                    edit_Time.setError("Enter Tutor");
+                    edit_Time.requestFocus();
+                    return;
+                }
+
+
+
                 if(cla_edit==null) {
                     dao.add(cla).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
