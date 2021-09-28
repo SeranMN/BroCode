@@ -1,18 +1,17 @@
 package com.example.chapter7app;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AdminHomeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class AdminHomeFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -28,14 +27,7 @@ public class AdminHomeFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AdminHomeFragment.
-     */
+
     // TODO: Rename and change types and number of parameters
     public static AdminHomeFragment newInstance(String param1, String param2) {
         AdminHomeFragment fragment = new AdminHomeFragment();
@@ -59,6 +51,45 @@ public class AdminHomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_admin_home, container, false);
+        View v= inflater.inflate(R.layout.fragment_admin_home, container, false);
+        CardView cardview=(CardView) v.findViewById(R.id.cardaddmark);
+        CardView cardView2 = (CardView) v.findViewById(R.id.cardaddteacher);
+        CardView cardView3 = (CardView) v.findViewById(R.id.cardaddclass);
+        CardView cardView4 = (CardView) v.findViewById(R.id.cardaddnotification);
+
+        cardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fr =getFragmentManager().beginTransaction();
+                fr.replace(R.id.frameLayout2,new AdminAddMarksFragment());
+                fr.commit();
+            }
+        });
+
+        cardView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),addTeacher.class);
+                startActivity(intent);
+            }
+        });
+
+        cardView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),AddClass.class);
+                startActivity(intent);
+            }
+        });
+
+        cardView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),Add_Notification.class);
+                startActivity(intent);
+            }
+        });
+
+        return v;
     }
 }

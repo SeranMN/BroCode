@@ -53,9 +53,11 @@ public class teacherDet extends Fragment {
         TextView name = view.findViewById(R.id.tv_name);
          TextView subject = view.findViewById(R.id.tv_sub);
          TextView degree = view.findViewById(R.id.tv_degree);
+         TextView description = view.findViewById(R.id.tvDescription);
             name.setText(teacher.getName());
             subject.setText(teacher.getSubject());
             degree.setText(teacher.getDegree());
+            description.setText(teacher.getDescription());
 
         return view;
     }
