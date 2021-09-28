@@ -14,13 +14,13 @@ public class Teacher implements Serializable {
     String email;
     String nic;
     String degree;
-
+    String description;
     String subject;
 
     public Teacher(){
 
     }
-    public Teacher(String address, String degree, String email, String mob, String name, String tnic, String spin) {
+    public Teacher(String address, String degree, String email, String mob, String name, String tnic, String spin,String description) {
         this.name = name;
         this.address = address;
         this.mob = mob;
@@ -28,6 +28,7 @@ public class Teacher implements Serializable {
         this.degree = degree;
         this.nic = tnic;
         this.subject = spin;
+        this.description = description;
 
     }
 
@@ -97,8 +98,11 @@ public class Teacher implements Serializable {
         this.key = key;
     }
 
+    public String getDescription() {
+        return description;
+    }
 
-
-
-
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

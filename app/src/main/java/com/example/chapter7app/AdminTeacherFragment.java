@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -61,6 +62,7 @@ public class AdminTeacherFragment extends Fragment implements teacherListAdapter
 
     teacherListAdapter adapter = new teacherListAdapter(this);
     TextView tv;
+    ProgressBar progressBar;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -68,8 +70,8 @@ public class AdminTeacherFragment extends Fragment implements teacherListAdapter
 
         View view = inflater.inflate(R.layout.fragment_admin_teacher, container, false);
         Button button = (Button) view.findViewById(R.id.btn_add);
-
-
+        progressBar = view.findViewById(R.id.adminSpin);
+        //progressBar.setVisibility(View.GONE);
 
 
         loadData();
@@ -116,6 +118,8 @@ public class AdminTeacherFragment extends Fragment implements teacherListAdapter
                 ArrayList<Teacher> t =  teachers;
                 if (snapshot.hasChildren()) {
                     for (DataSnapshot data : snapshot.getChildren()) {
+                        progressBar.setVisibility(View.VISIBLE);
+
                          teacher = data.getValue(Teacher.class);
 
                          teacher.setKey(data.getKey());
@@ -123,6 +127,7 @@ public class AdminTeacherFragment extends Fragment implements teacherListAdapter
 
 
                     }
+                    progressBar.setVisibility(View.GONE);
 
                     adapter.setTeachers(teachers);
 
