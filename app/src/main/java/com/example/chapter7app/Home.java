@@ -86,7 +86,7 @@ teacherListAdapter adapter;
             }
         });
         //set notification count
-        bottomNavigation.setCount(4,"10");
+        //bottomNavigation.setCount(4,"10");
 
         //set home initial
         bottomNavigation.show(1,true);

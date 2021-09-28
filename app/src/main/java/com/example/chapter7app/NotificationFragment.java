@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -73,13 +74,15 @@ public class NotificationFragment extends Fragment implements NotificationListAd
     }
     NotificationListAdapter adapter = new NotificationListAdapter(this);
     TextView tvAnnouncement;
+    ProgressBar progressBar;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_notification, container, false);
-
+        progressBar = view.findViewById(R.id.progressBar);
         notificationDAO = new NotificationDAO();
         loadData();
 
@@ -102,11 +105,13 @@ public class NotificationFragment extends Fragment implements NotificationListAd
                 ArrayList<Notification> not = notifications;
                 if (snapshot.hasChildren()){
                     for (DataSnapshot data : snapshot.getChildren()){
+                        progressBar.setVisibility(View.VISIBLE);
                         notification = data.getValue(Notification.class);
 
                         notification.setKey(data.getKey());
                         notifications.add(notification);
                     }
+                    progressBar.setVisibility(View.GONE);
                     adapter.setNotifications(notifications);
                     adapter.notifyDataSetChanged();
                 }
