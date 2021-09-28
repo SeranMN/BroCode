@@ -46,6 +46,7 @@ public class Add_Notification extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_add_notification);
 
         Topic = findViewById(R.id.et_Topic);
