@@ -1,16 +1,21 @@
 package com.example.chapter7app;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -18,6 +23,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -26,11 +32,14 @@ import java.util.HashMap;
 import java.util.List;
 
 public class addTeacher extends AppCompatActivity {
-EditText name,address,mobileNo,email,degree,nic;
+EditText name,address,mobileNo,email,degree,nic,description;
 Spinner subject;
-FirebaseDatabase firebaseDatabase;
-DatabaseReference reference;
+
+
 Button btn;
+
+ProgressBar spinner;
+private static final int PICK_IMAGE_REQUEST = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +52,11 @@ Button btn;
         email = findViewById(R.id.et_mail);
         degree = findViewById(R.id.et_degree);
         subject = findViewById(R.id.spinner_subject);
-    btn = findViewById(R.id.btn_submit);
+        btn = findViewById(R.id.btn_submit);
+
+        description = findViewById(R.id.Et_description);
+
+
 
         List <String> subjects = Arrays.asList("Applied Maths","Pure Maths","Chemistry","Physics","ICT","BIO");
         ArrayAdapter adapter = new ArrayAdapter (getApplicationContext(), android.R.layout.simple_spinner_item, subjects);
@@ -54,6 +67,7 @@ Button btn;
         if(teacherEdit == null){
             btn.setText("Submit");
             btn.setVisibility(View.VISIBLE);
+
         }else{
             name.setText(teacherEdit.getName());
             nic.setText(teacherEdit.getNic());
@@ -71,17 +85,49 @@ Button btn;
         @Override
         public void onClick(View v) {
 
+
+
             String tName =  name.getText().toString();
             String tAddress = address.getText().toString();
             String tmob = mobileNo.getText().toString();
             String tEmail =email.getText().toString();
             String tdegree =   degree.getText().toString();
-
+            String tDescription = description.getText().toString();
             String tnic = nic.getText().toString();
             String spin = subject.getSelectedItem().toString();
+            if(tName.isEmpty()){
+                name.setError("Enter Name");
+                name.requestFocus();
+                return;
+            }
+            if(tAddress.isEmpty()){
+                address.setError("Enter Name");
+                address.requestFocus();
+                return;
+            }
+            if(tmob.isEmpty()){
+                mobileNo.setError("Enter Name");
+                mobileNo.requestFocus();
+                return;
+            }
+            if(tdegree.isEmpty()){
+                degree.setError("Enter Name");
+                name.requestFocus();
+                return;
+            }
+            if(tnic.isEmpty()){
+                nic.setError("Enter Name");
+                nic.requestFocus();
+                return;
+            }
+            if(!Patterns.EMAIL_ADDRESS.matcher(tEmail).matches()){
+                email.setError("Invalid Email Type");
+                email.requestFocus();
+                return;
+            }
 
 
-            Teacher teacher = new Teacher( tAddress,  tdegree,tEmail, tmob,  tName,  tnic,  spin);
+            Teacher teacher = new Teacher( tAddress,  tdegree,tEmail, tmob,  tName,  tnic,  spin,tDescription);
            if (teacherEdit == null) {
 
                teacherDAO.add(teacher).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -89,6 +135,13 @@ Button btn;
                                                                 public void onSuccess(Void unused) {
                                                                     Toast.makeText(getApplicationContext(),
                                                                             "Teacher Added", Toast.LENGTH_SHORT).show();
+
+                                                                    name.setText("");
+                                                                    address.setText("");
+                                                                    mobileNo.setText("");
+                                                                    email.setText("");
+                                                                    degree.setText("");
+
                                                                 }
                                                             }
 
@@ -112,6 +165,7 @@ Button btn;
                                                                 public void onSuccess(Void unused) {
                                                                     Toast.makeText(getApplicationContext(),
                                                                             "Teacher Updated", Toast.LENGTH_SHORT).show();
+
                                                                 }
                                                             }
 
@@ -124,12 +178,14 @@ Button btn;
 
            }
 
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-           transaction.replace(R.id.frameLayout2,new AdminTeacherFragment());
-           transaction.commit();
+//            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//           transaction.replace(R.id.frameLayout2,new AdminTeacherFragment());
+//           transaction.commit();
 
         }
     });
+
+
 
 
     }

@@ -32,6 +32,51 @@
         <entry key="..\:/MAD project final/app/src/main/res/layout/fragment_teachers.xml" value="0.25416666666666665" />
         <entry key="..\:/MAD project final/app/src/main/res/layout/home_fragment.xml" value="0.25416666666666665" />
         <entry key="..\:/MAD project final/app/src/main/res/menu/appmenu.xml" value="0.536" />
+        <entry key="..\:/SLIIT/Tute, Assignment Answers/2nd Year ~ 2nd Semester/IT2010 - Mobile Application Development/BroCode/app/src/main/res/drawable/icon_calendar.xml" value="0.1" />
+        <entry key="..\:/SLIIT/Tute, Assignment Answers/2nd Year ~ 2nd Semester/IT2010 - Mobile Application Development/BroCode/app/src/main/res/drawable/icon_time.xml" value="0.1" />
+        <entry key="..\:/SLIIT/Tute, Assignment Answers/2nd Year ~ 2nd Semester/IT2010 - Mobile Application Development/BroCode/app/src/main/res/layout/activity_add_notification.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT/Tute, Assignment Answers/2nd Year ~ 2nd Semester/IT2010 - Mobile Application Development/BroCode/app/src/main/res/layout/activity_add_teacher.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT/Tute, Assignment Answers/2nd Year ~ 2nd Semester/IT2010 - Mobile Application Development/BroCode/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT/Tute, Assignment Answers/2nd Year ~ 2nd Semester/IT2010 - Mobile Application Development/BroCode/app/src/main/res/layout/fragment_add_teacher.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT/Tute, Assignment Answers/2nd Year ~ 2nd Semester/IT2010 - Mobile Application Development/BroCode/app/src/main/res/layout/fragment_admin_notification.xml" value="0.264" />
+        <entry key="..\:/SLIIT/Tute, Assignment Answers/2nd Year ~ 2nd Semester/IT2010 - Mobile Application Development/BroCode/app/src/main/res/layout/fragment_admin_teacher.xml" value="0.176" />
+        <entry key="..\:/SLIIT/Tute, Assignment Answers/2nd Year ~ 2nd Semester/IT2010 - Mobile Application Development/BroCode/app/src/main/res/layout/fragment_home.xml" value="0.17916666666666667" />
+        <entry key="..\:/SLIIT/Tute, Assignment Answers/2nd Year ~ 2nd Semester/IT2010 - Mobile Application Development/BroCode/app/src/main/res/layout/fragment_notification.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT/Tute, Assignment Answers/2nd Year ~ 2nd Semester/IT2010 - Mobile Application Development/BroCode/app/src/main/res/layout/fragment_notification_details.xml" value="0.24022928608650337" />
+        <entry key="..\:/SLIIT/Tute, Assignment Answers/2nd Year ~ 2nd Semester/IT2010 - Mobile Application Development/BroCode/app/src/main/res/layout/fragment_notification_details_student.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT/Tute, Assignment Answers/2nd Year ~ 2nd Semester/IT2010 - Mobile Application Development/BroCode/app/src/main/res/layout/fragment_teachers.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT/Tute, Assignment Answers/2nd Year ~ 2nd Semester/IT2010 - Mobile Application Development/BroCode/app/src/main/res/layout/home_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT/Tute, Assignment Answers/2nd Year ~ 2nd Semester/IT2010 - Mobile Application Development/BroCode/app/src/main/res/layout/notification_list.xml" value="0.264" />
+        <entry key="..\:/SLIIT/Tute, Assignment Answers/2nd Year ~ 2nd Semester/IT2010 - Mobile Application Development/BroCode/app/src/main/res/layout/teacherlist.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/activity_add_class.xml" value="0.4" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/activity_admin_view.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/activity_enroll_class.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/activity_login.xml" value="0.21557971014492755" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/activity_login2.xml" value="0.21557971014492755" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/activity_main.xml" value="0.21557971014492755" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/content_login.xml" value="0.21557971014492755" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/fragment_account.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/fragment_admin_add_marks.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/fragment_admin_class.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/fragment_admin_home.xml" value="0.25" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/fragment_admin_notification.xml" value="0.264" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/fragment_class_details.xml" value="0.4" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/fragment_classes.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/fragment_enroll_class.xml" value="0.4" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/fragment_first.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/fragment_join_class.xml" value="0.12" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/home_fragment.xml" value="0.264" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/item.xml" value="0.1" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/item2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/layout_item.xml" value="0.264" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/layout_student_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/notification_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/teacherlist.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/layout/textviewborder.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/menu/appmenu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/BroCode/app/src/main/res/menu/option_class_menu.xml" value="0.264" />
       </map>
     </option>
   </component>

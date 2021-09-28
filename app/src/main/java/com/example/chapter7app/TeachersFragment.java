@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -63,7 +64,7 @@ public class TeachersFragment extends Fragment implements teacherListAdapter.tea
 
     }
     teacherListAdapter adapter = new teacherListAdapter(this);
-
+    ProgressBar progressBar;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -73,7 +74,7 @@ public class TeachersFragment extends Fragment implements teacherListAdapter.tea
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(manager);
-
+        progressBar=view.findViewById(R.id.stuTeacherProgress);
 
         recyclerView.setAdapter(adapter);
         loadData();
@@ -95,13 +96,14 @@ public class TeachersFragment extends Fragment implements teacherListAdapter.tea
                 if (snapshot.hasChildren()) {
                     for (DataSnapshot data : snapshot.getChildren()) {
                         teacher = data.getValue(Teacher.class);
+                        progressBar.setVisibility(View.VISIBLE);
 
                         teacher.setKey(data.getKey());
                         teachers.add(teacher);
 
 
                     }
-
+                    progressBar.setVisibility(View.GONE);
                     adapter.setTeachers(teachers);
 
                     adapter.notifyDataSetChanged();
