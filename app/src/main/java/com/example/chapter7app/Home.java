@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class Home extends AppCompatActivity {
 DatabaseReference ref;
 teacherListAdapter adapter;
-    String user = "admin";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Bundle bundle = getIntent().getExtras();
@@ -36,7 +36,7 @@ teacherListAdapter adapter;
         bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_launcher));
         bottomNavigation.add(new MeowBottomNavigation.Model(4,R.drawable.ic_baseline_notifications_24));
         bottomNavigation.add(new MeowBottomNavigation.Model(5,R.drawable.ic_baseline_account_circle_24));
-       user  = bundle.getString("type");
+        String user = "";
 
         bottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
             @Override
