@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 
-public class MarkListAdapter3 extends RecyclerView.Adapter {
+public class MarkListAdapter4 extends RecyclerView.Adapter {
     /* public MarkListAdapter2(List<String> list) {
          this.list = list;
      }
@@ -23,7 +23,7 @@ public class MarkListAdapter3 extends RecyclerView.Adapter {
     ArrayList<Marks> list;
     Context context;
 
-    public MarkListAdapter3(Context context, ArrayList<Marks> list) {
+    public MarkListAdapter4(Context context, ArrayList<Marks> list) {
         this.context = context;
         this.list = list;
     }
@@ -33,7 +33,7 @@ public class MarkListAdapter3 extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item3,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item4,parent,false);
         ViewHolderClass viewHolderClass=new ViewHolderClass(view);
         return viewHolderClass;
 
@@ -53,7 +53,7 @@ public class MarkListAdapter3 extends RecyclerView.Adapter {
         viewHolderClass.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),ShowMarks.class);
+                Intent intent=new Intent(v.getContext(),ShowMarksstudent.class);
                 Bundle bundle=new Bundle();
                 bundle.putSerializable("key",marks);
                 intent.putExtras(bundle);
@@ -75,7 +75,7 @@ public class MarkListAdapter3 extends RecyclerView.Adapter {
         public ViewHolderClass(@NonNull View itemView) {
             super(itemView);
 
-            tmarks=itemView.findViewById(R.id.testnos);
+            tmarks=itemView.findViewById(R.id.testnoss);
            /* stID=itemView.findViewById(R.id.stidnn);
             mark=itemView.findViewById(R.id.marksnn);
             edit=itemView.findViewById(R.id.edit);
