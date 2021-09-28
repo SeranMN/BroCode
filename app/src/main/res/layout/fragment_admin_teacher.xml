@@ -33,8 +33,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/teacherListAdmin"
         android:layout_width="match_parent"
-        android:layout_height="511dp"
-        android:layout_marginLeft="25dp"
+        android:layout_height="553dp"
         tools:layout_conversion_absoluteHeight="565dp"
         tools:layout_conversion_absoluteWidth="353dp"
         tools:layout_editor_absoluteX="25dp"
