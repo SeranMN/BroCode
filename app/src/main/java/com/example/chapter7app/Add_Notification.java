@@ -2,9 +2,15 @@ package com.example.chapter7app;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.app.DatePickerDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -131,6 +137,27 @@ public class Add_Notification extends AppCompatActivity {
                 String tTime = Time.getText().toString();
                 String tClass = Class.getSelectedItem().toString();
 
+                if(tTopic.isEmpty()){
+                    Topic.setError("Enter Topic");
+                    Topic.requestFocus();
+                    return;
+                }
+                if(tMessage.isEmpty()){
+                    Message.setError("Enter Announcement");
+                    Message.requestFocus();
+                    return;
+                }
+
+                if(tDate.isEmpty()){
+                    Date.setError("Enter Date");
+                    return;
+                }
+
+                if(tTime.isEmpty()){
+                    Time.setError("Enter Time");
+                    return;
+                }
+
                Notification notification = new Notification(tTopic,tMessage,tDate,tTime,tClass);
 
                if(notificationEdit == null) {
@@ -138,6 +165,7 @@ public class Add_Notification extends AppCompatActivity {
                        @Override
                        public void onSuccess(Void unused) {
                            Toast.makeText(getApplicationContext(), "Notification Saved", Toast.LENGTH_SHORT).show();
+                           appNotification();
                        }
                    }
                    ).addOnFailureListener(new OnFailureListener() {
@@ -172,5 +200,23 @@ public class Add_Notification extends AppCompatActivity {
                finish();
             }
         });
+    }
+    private void appNotification(){
+        String notTopic = Topic.getText().toString();
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel notificationChannel = new NotificationChannel("annc","annc", NotificationManager.IMPORTANCE_DEFAULT);
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(notificationChannel);
+        }
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"annc")
+                .setContentText("Chapter 7")
+                .setSmallIcon(R.drawable.nextchapter)
+                .setAutoCancel(true)
+                .setContentText(notTopic);
+
+        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
+        notificationManagerCompat.notify(999,builder.build());
     }
 }

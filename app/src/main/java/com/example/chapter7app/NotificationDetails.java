@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -117,6 +118,9 @@ public class NotificationDetails extends Fragment {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 notificationDAO.delete(notificationEdit.getKey());
+                                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                fragmentTransaction.replace(R.id.frameLayout2,new AdminNotificationFragment());
+                                fragmentTransaction.commit();
                             }
                         })
                         .create();
