@@ -79,10 +79,10 @@ public class Login extends AppCompatActivity {
 
                     if (email.equals("admin@my.lk")) {
                         Toast.makeText(getApplicationContext(), "Successfully Login ", Toast.LENGTH_SHORT).show();
-                        intent = new Intent(getApplicationContext(), Home.class);
+                        intent = new Intent(getApplicationContext(), AdminView.class);
                         String studentId = sharedpreferences.getString(Student_key, null);
                         SharedPreferences.Editor editor = sharedpreferences.edit();
-                        intent.putExtra("type","admin");
+
 
                         editor.putString(Student_key, mAuth.getCurrentUser().getUid());
                         editor.apply();
