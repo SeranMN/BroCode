@@ -60,7 +60,7 @@
         android:layout_height="31dp"
         android:background="@color/mad2"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView8"
         app:layout_constraintEnd_toEndOf="parent"
