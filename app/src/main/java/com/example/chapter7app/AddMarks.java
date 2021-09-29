@@ -28,6 +28,7 @@ public class AddMarks extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_add_marks);
         txtclsid=findViewById(R.id.txtclsid);
         txttestno=findViewById(R.id.txttestno);

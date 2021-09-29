@@ -20,6 +20,7 @@ public class AddClass extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_add_class);
         EditText edit_ClassID =findViewById(R.id.txtclaid);
         EditText edit_TutorName = findViewById(R.id.edtxt01);
