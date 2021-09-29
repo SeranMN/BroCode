@@ -11,6 +11,12 @@
         android:theme="@style/Theme.Chapter7App"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ShowMarksstudent"
+            android:exported="true" />
+        <activity
+            android:name=".StudenttestMarks"
+            android:exported="true" />
+        <activity
             android:name=".Showtests"
             android:exported="true" />
         <activity
@@ -40,13 +46,15 @@
         -->
         <activity
             android:name=".AddMarks"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".Home"/>
         <activity
             android:name=".SelectClass"
             android:exported="true" />
         <activity
             android:name=".AddClass"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".Home"/>
         <activity
             android:name=".Login"
             android:exported="true"

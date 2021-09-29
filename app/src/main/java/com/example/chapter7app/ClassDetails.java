@@ -1,8 +1,10 @@
 package com.example.chapter7app;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +21,7 @@ public class ClassDetails extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private  static final String ARG_Id="id";
     private static final String ARG_ClassTutor = "ClassTutor";
     private static final String ARG_Topic = "Topic";
     private static final String ARG_Tutor = "Tutor";
@@ -32,7 +35,7 @@ public class ClassDetails extends Fragment {
     private String Degree;
     private String Date;
     private String Time;
-
+    private String clsid;
     public ClassDetails() {
         // Required empty public constructor
     }
@@ -42,6 +45,7 @@ public class ClassDetails extends Fragment {
     public static ClassDetails newInstance(ClassTutor classTutor) {
         ClassDetails fragment = new ClassDetails();
         Bundle args = new Bundle();
+        args.putString(ARG_Id,classTutor.getClsid());
         args.putString(ARG_Topic, classTutor.getAlYear()  +classTutor.getSubject());
         args.putString(ARG_Tutor, classTutor.getTutor());
         args.putString(ARG_Degree, classTutor.getDegree());
@@ -57,6 +61,7 @@ public class ClassDetails extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
+            clsid=getArguments().getString(ARG_Id);
             Topic = getArguments().getString(ARG_Topic);
             Tutor = getArguments().getString(ARG_Tutor);
             Degree = getArguments().getString(ARG_Degree);
@@ -84,6 +89,20 @@ public class ClassDetails extends Fragment {
         txttime.setText(Time);
 
         Button btnenroll=view.findViewById(R.id.btnenroll);
+        Button btnviewmark=view.findViewById(R.id.buttonvim);
+
+        btnviewmark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(v.getContext(),StudenttestMarks.class);
+
+                intent.putExtra("key",clsid);
+                System.out.println(clsid);
+                v.getContext().startActivity(intent);
+            }
+        });
+
 //        btnenroll.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

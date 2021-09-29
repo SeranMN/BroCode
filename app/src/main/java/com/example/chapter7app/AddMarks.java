@@ -28,6 +28,7 @@ public class AddMarks extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_add_marks);
         txtclsid=findViewById(R.id.txtclsid);
         txttestno=findViewById(R.id.txttestno);
@@ -64,12 +65,20 @@ public class AddMarks extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(Integer.parseInt(String.valueOf(etmark.getText().toString()))>100 ||Integer.parseInt(String.valueOf(etmark.getText().toString()))<0){
+                    etmark.setError("Add a mark between 0-100");
+                    etmark.requestFocus();
+                    return ;
+                }
+
                 Marks marks=new Marks(clsid,testno,etstudentID.getText().toString(),etmark.getText().toString());
                 if(editmarks==null) {
                     dao.add(marks).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
                             Toast.makeText(getApplicationContext(), "Marks Added", Toast.LENGTH_SHORT).show();
+                            etstudentID.setText("");
+                            etmark.setText("");
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override

@@ -56,7 +56,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/testnonn"
+                android:id="@+id/testnoss"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
